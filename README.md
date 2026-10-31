@@ -57,6 +57,6 @@ Continuous 250 SPS 32-bit 6-channel seismic streaming on edge SBCs and workstati
 ## 🏛️ Institutional Affiliation & Attribution
 
 Architected by **Nayan Pandit**  
-* **B.S. Computer Science Researcher**, Indian Institute of Technology (IIT) Patna (`nayan_ua2603cdh83@iitp.ac.in`)  
+* **Computer Science Researcher**, Indian Institute of Technology (IIT) 
 * **Active Researcher**, IIT Madras Systems Engineering Society & IIM Mumbai Quantitative Finance Lab  
 * **Hardware Target:** [SensePlex Limited — AnyShake Project](https://anyshake.org/) ("Listen to the whispering earth.")
