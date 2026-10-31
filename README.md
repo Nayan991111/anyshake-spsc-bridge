@@ -8,7 +8,7 @@
 ![Latency](https://img.shields.io/badge/INGESTION_LOOP-%3C500NS_ZERO--COPY-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)
 
-> **Deployment Status:** `Phase 1 Core Ring-Buffer & DSP Architecture Initialized` — *Awaiting SensePlex AnyShake Explorer Broadband Hardware Unit for Pier A-01 Commissioning (Coastal Bengal Basin Testbed: 21.880347°N, 87.589796°E | IIT Patna Research Node).*
+> **Deployment Status:** `Phase 1 Core Ring-Buffer & DSP Architecture Initialized`  *Awaiting SensePlex AnyShake Explorer Broadband Hardware Unit for Pier A-01 Commissioning (Coastal Bengal Basin Testbed: 21.880347°N, 87.589796°E | IIT Patna Research Node).*
 
 `anyshake-spsc-bridge` is a high-throughput, zero-allocation systems daemon engineered in **Rust** to bridge physical **SensePlex AnyShake Explorer** 32-bit triaxial seismographs (`EHZ`, `EHN`, `EHE` / `ENZ`, `ENN`, `ENE` up to 250 SPS) into distributed **Apache Kafka**, **PostgreSQL/TimescaleDB**, and **SeisComP** pipelines without garbage-collection jitter or SD/NVMe flash wear.
 
