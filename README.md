@@ -22,7 +22,7 @@ Adapted from the `<30ns` [**Titan HFT Engine**](https://github.com/Nayan991111/T
 graph LR
     A[AnyShake Explorer<br/>32-Bit Sigma-Delta ADC<br/>250 SPS Triaxial] -->|UART / SeedLink :18000| B(Zero-Copy Socket &<br/>Serial Frame Parser)
     B -->|Atomic Acquire/Release| C{64B Cache-Aligned<br/>SPSC Lock-Free Ring Buffer}
-    C -->|Zero-Allocation Read| D[O(1) Recursive STA/LTA<br/>& 0.1-5Hz Microseism PSD]
+    C -->|Zero-Allocation Read| D["O(1) Recursive STA/LTA<br/>& 0.1-5Hz Microseism PSD"]
     C -->|mmap Circular Spool| E[(Flash-Wear Guard<br/>MiniSEED Local Buffer)]
     D -->|Normalized Binary Struct| F[Apache Kafka + Zookeeper<br/>Topic: edge.geo.anyshake]
     F --> G[PostgreSQL / TimescaleDB<br/>& SeisComP / Helicorder UI]
