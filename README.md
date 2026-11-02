@@ -48,7 +48,7 @@ Continuous 250 SPS 32-bit 6-channel seismic streaming on edge SBCs and workstati
 
 - [x] **Phase 0 (Completed):** Lock-free SPSC ring buffer memory layout, 64-byte cache-line padding, and $O(1)$ recursive STA/LTA state machine specification.
 - [ ] **Milestone 1 (Weeks 1–2):** Physical bolt-down commissioning of **AnyShake Explorer** on isolated interior RCC column **Pier A-01** (`21.880347°N, 87.589796°E`, Purba Medinipur, West Bengal), backed by G+3 solar PV + 24V Exide Solatubular UPS microgrid and $\pm 1\text{ms}$ GNSS/NTP stratum synchronization.
-- [ ] **Milestone 2 (Weeks 3–4):** Full `AnyShake Observer` SeedLink (`TCP :18000`) & MQTT zero-copy binary framing into **Apache Kafka** (`edge.geo.anyshake`) and `mmap` circular flash-wear spooler.
+- [ ] **Milestone 2 (Weeks 3-4):** Full `AnyShake Observer` SeedLink (`TCP :18000`) & MQTT zero-copy binary framing into **Apache Kafka** (`edge.geo.anyshake`) and `mmap` circular flash-wear spooler.
 - [ ] **Milestone 3 (Weeks 4–5):** Release of `anyshake-hil-bench`  a virtual PTY/SeedLink Hardware-in-the-Loop (HIL) stress-testing suite replaying historical USGS/IRIS teleseismic waveforms across 1,000+ simulated concurrent stations.
 - [ ] **Milestone 4 (Week 6+):** Publication of South Asia broadband noise-floor PSD and Bay of Bengal cyclonic microseism benchmark pre-print (`arXiv cs.DC / q-fin.TR`).
 
@@ -59,4 +59,4 @@ Continuous 250 SPS 32-bit 6-channel seismic streaming on edge SBCs and workstati
 Architected by **Nayan Pandit**  
 * **Computer Science Student Researcher**, Indian Institute of Technology (IIT) 
 * **Active Student Researcher**, IIT Madras Systems Engineering Society & IIM Mumbai Quantitative Finance Lab  
-* **Hardware Target:** [SensePlex Limited — AnyShake Project](https://anyshake.org/) ("Listen to the whispering earth.")
+* **Hardware Target:** [SensePlex Limited; AnyShake Project](https://anyshake.org/) ("Listen to the whispering earth.")
