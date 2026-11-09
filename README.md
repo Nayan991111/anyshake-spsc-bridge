@@ -5,7 +5,7 @@
 ![Platform](https://img.shields.io/badge/PLATFORM-ARM64_LINUX_%7C_APPLE_SILICON-black?style=for-the-badge&logo=linux)
 ![Rust](https://img.shields.io/badge/RUST-1.75%2B-orange?style=for-the-badge&logo=rust)
 ![Passband](https://img.shields.io/badge/PASSBAND-0.5--27_Hz_%7C_6--CH-008080?style=for-the-badge)
-![SPSC](https://img.shields.io/badge/SPSC_HANDOFF-~30_ns_%28APPLE_M4%29-brightgreen?style=for-the-badge)
+![STA/LTA](https://img.shields.io/badge/STA%2FLTA-O%281%29_PER_SAMPLE_%7C_NO_HEAP-brightgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/STATUS-PHASE_0_COMPLETE_%7C_AWAITING_HARDWARE-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)
 
@@ -130,13 +130,13 @@ The default windows are N<sub>s</sub> = 250 (1 s) and N<sub>l</sub> = 2500 (10 s
 
 ---
 
-## ⏱️ Timing Budget: What "~30 ns" Does and Does Not Mean
+## ⏱️ Timing Budget
 
 | Stage | Owner | Value | Basis |
 |---|---|---|---|
 | **4.1** Sample timestamp accuracy | Explorer GNSS / acquisition | ±1 ms vs UTC | Hardware specification; verified in the Phase 1 report |
 | **4.2** Device protocol framing + transport | Explorer → Observer → network | ~100 ms framing + ~1 ms localhost / ~50 ms WAN | Upstream; **cannot be reduced by downstream software** |
-| **4.3a** SPSC `try_push` / `try_pop` handoff | This crate | ~28–30 ns per operation | **Measured** on Apple M4 in the [Titan HFT Engine](https://github.com/Nayan991111/Titan-HFT-Engine) benchmark; ARM64 SBC figure pending |
+| **4.3a** SPSC producer → consumer handoff | This crate | < 1 µs one-way, i.e. < 0.025% of the 4 ms sample interval at 250 SPS | Ping-pong benchmark of `src/main.rs` on an x86-64 VM: ~6 ns single-thread push+pop, ~0.3 µs cross-core one-way. The station ARM64 SBC figure will be published in Phase 1 |
 | **4.3b** IIR + STA/LTA + covariance/PSD update | This crate | ~180 µs | Design target |
 | **4.3c** WAL write + Kafka serialization | This crate | ~240 µs | Design target |
 | **4.3** End-to-end downstream path | This crate | 0.42 ms median · < 0.85 ms p99 | Design target, to be reported in Phase 1/2 |
